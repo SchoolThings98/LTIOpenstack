@@ -1,0 +1,13 @@
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\LTIOpenstackProject.exe.config
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\LTIOpenstackProject.exe
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\LTIOpenstackProject.pdb
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.csprojAssemblyReference.cache
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.Form1.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.Properties.Resources.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.csproj.GenerateResource.cache
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.csproj.CoreCompileInputs.cache
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.exe
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.pdb
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\RestSharp.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\RestSharp.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.csproj.CopyComplete
