@@ -9,7 +9,7 @@ namespace LTIOpenstackProject
 {
     class OpenstackAPI
     {
-        public void openstackLogin(string username, string password)
+        public string openstackLogin(string username, string password)
         {
             var ticketURL = new RestClient("http://192.168.113.110/identity/v3/auth/tokens");
             var postRequest = new RestRequest("/", Method.POST);
@@ -19,7 +19,15 @@ namespace LTIOpenstackProject
             postRequest.AddJsonBody(json);
 
             IRestResponse ticketResponse = ticketURL.Execute(postRequest);
+            string getTicket = ticketResponse.Headers[0].ToString();
+            getTicket = getTicket.Substring(getTicket.IndexOf("=") + 1);
+     
+
             Console.WriteLine(ticketResponse);
+            Console.WriteLine(ticketResponse.Headers[0].ToString());
+            Console.WriteLine(getTicket);
+
+            return getTicket;
         }
     }
 }

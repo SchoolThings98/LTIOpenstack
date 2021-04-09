@@ -24,7 +24,13 @@ namespace LTIOpenstackProject
             var username=textBoxUsername.Text;
             var password= textBoxPassword.Text;
             OpenstackAPI openstack = new OpenstackAPI();
-            openstack.openstackLogin(username, password);
+            var response = openstack.openstackLogin(username, password);
+            if (response==null)
+            {
+
+            }
+
+            authToken = response;
 
         }
     }
