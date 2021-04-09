@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,12 +26,17 @@ namespace LTIOpenstackProject
             var password= textBoxPassword.Text;
             OpenstackAPI openstack = new OpenstackAPI();
             var response = openstack.openstackLogin(username, password);
-            if (response==null)
+            HttpStatusCode statusCode = response.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            Console.WriteLine(numericStatusCode);
+            if (numericStatusCode!=201)
             {
-
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
             }
-
-            authToken = response;
+            string responseTicket = response.Headers[0].ToString();
+            authToken = responseTicket.Substring(responseTicket.IndexOf("=") + 1);
+            Console.WriteLine(authToken);
 
         }
     }
