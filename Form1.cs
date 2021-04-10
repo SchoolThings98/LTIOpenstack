@@ -39,5 +39,12 @@ namespace LTIOpenstackProject
             Console.WriteLine(authToken);
 
         }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Register register = new Register();
+            register.ShowDialog();
+        }
     }
 }

@@ -11,3 +11,17 @@ D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\RestSharp.dll
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\RestSharp.xml
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.csproj.CopyComplete
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\bin\Debug\LTIOpenstackProject.exe.config
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\bin\Debug\LTIOpenstackProject.exe
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\bin\Debug\LTIOpenstackProject.pdb
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\bin\Debug\RestSharp.dll
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\bin\Debug\RestSharp.xml
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.csprojAssemblyReference.cache
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.Form1.resources
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.Properties.Resources.resources
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.Register.resources
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.GenerateResource.cache
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CoreCompileInputs.cache
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CopyComplete
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.exe
+C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.pdb
