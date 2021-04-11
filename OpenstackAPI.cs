@@ -25,5 +25,10 @@ namespace LTIOpenstackProject
 
             return ticketResponse;
         }
+
+        public void projectList(string token, string ip)
+        {
+
+        }
     }
 }

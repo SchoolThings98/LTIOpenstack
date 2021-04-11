@@ -26,3 +26,4 @@ C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstack
 C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.exe
 C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.pdb
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.Register.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormProjects.resources
