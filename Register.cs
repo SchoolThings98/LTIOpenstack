@@ -16,5 +16,10 @@ namespace LTIOpenstackProject
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

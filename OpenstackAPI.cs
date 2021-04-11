@@ -9,9 +9,9 @@ namespace LTIOpenstackProject
 {
     class OpenstackAPI
     {
-        public IRestResponse openstackLogin(string username, string password)
+        public IRestResponse openstackLogin(string username, string password, string ip)
         {
-            var ticketURL = new RestClient("http://192.168.113.110/identity/v3/auth/tokens");
+            var ticketURL = new RestClient("http://"+ip+"/identity/v3/auth/tokens");
             var postRequest = new RestRequest("/", Method.POST);
 
             var json = "{\"auth\": {\"identity\": {\"methods\": [\"password\"],\"password\": {\"user\": {\"name\": \""+username+"\",\"domain\": {\"name\": \"Default\"},\"password\": \""+password+"\"}}}}}";

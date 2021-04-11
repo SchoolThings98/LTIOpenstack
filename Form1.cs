@@ -24,8 +24,9 @@ namespace LTIOpenstackProject
             //Login
             var username=textBoxUsername.Text;
             var password= textBoxPassword.Text;
+            var ip = textBoxIP.Text;
             OpenstackAPI openstack = new OpenstackAPI();
-            var response = openstack.openstackLogin(username, password);
+            var response = openstack.openstackLogin(username, password,ip);
             HttpStatusCode statusCode = response.StatusCode;
             int numericStatusCode = (int)statusCode;
             Console.WriteLine(numericStatusCode);
