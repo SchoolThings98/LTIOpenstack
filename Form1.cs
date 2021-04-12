@@ -50,5 +50,10 @@ namespace LTIOpenstackProject
             Register register = new Register();
             register.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

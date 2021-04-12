@@ -23,8 +23,11 @@ namespace LTIOpenstackProject
 
         private void FormProjects_Load(object sender, EventArgs e)
         {
+
             Console.WriteLine(authToken);
             Console.WriteLine(serverIP);
+            OpenstackAPI openstack = new OpenstackAPI();
+            openstack.projectList(authToken, serverIP);
         }
     }
 }

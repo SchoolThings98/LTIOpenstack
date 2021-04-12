@@ -1,8 +1,10 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace LTIOpenstackProject
@@ -28,7 +30,23 @@ namespace LTIOpenstackProject
 
         public void projectList(string token, string ip)
         {
+            var projectsURI = new RestClient("http://" +ip+"/identity/v3/auth/projects");
+            var getRequest = new RestRequest("/", Method.GET);
+            getRequest.AddHeader("x-auth-token",token);
 
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            /*
+            JsonDocument doc = JsonDocument.Parse(getResponse.Content);
+            JsonElement root = doc.RootElement;*/
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray projects = (JArray)jObject.SelectToken("projects");
+            foreach(JToken project in projects)
+            {
+                Console.WriteLine((string)project.SelectToken("id"));
+                Console.WriteLine((string)project.SelectToken("name"));
+                Console.WriteLine((string)project.SelectToken("domain_id"));
+            }
+            Console.WriteLine(projects);
         }
     }
 }

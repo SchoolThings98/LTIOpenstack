@@ -28,3 +28,23 @@ C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstack
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.Register.resources
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormProjects.resources
 C:\Faculdade\3ANO\2SEMESTRE\LAB TI\Trabalho1\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormProjects.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Buffers.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Memory.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Text.Encodings.Web.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Text.Json.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.ValueTuple.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Buffers.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Memory.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Text.Encodings.Web.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Text.Json.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.ValueTuple.xml
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Newtonsoft.Json.dll
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Newtonsoft.Json.xml
