@@ -48,3 +48,39 @@ D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\System.ValueTuple.xml
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Newtonsoft.Json.dll
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csprojAssemblyReference.cache
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.exe
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.pdb
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\LTIOpenstackProject.exe.config
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\LTIOpenstackProject.exe
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\LTIOpenstackProject.pdb
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\RestSharp.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Buffers.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Memory.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Text.Json.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.ValueTuple.dll
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\RestSharp.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Buffers.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Memory.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Text.Json.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\bin\Debug\System.ValueTuple.xml
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.Form1.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormProjects.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.Instance.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.Properties.Resources.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.Register.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.GenerateResource.cache
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CoreCompileInputs.cache
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CopyComplete

@@ -93,6 +93,12 @@
     <Compile Include="FormProjects.Designer.cs">
       <DependentUpon>FormProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instance.Designer.cs">
+      <DependentUpon>Instance.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpenstackAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProjects.resx">
       <DependentUpon>FormProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instance.resx">
+      <DependentUpon>Instance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
