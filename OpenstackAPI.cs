@@ -27,8 +27,21 @@ namespace LTIOpenstackProject
 
             return ticketResponse;
         }
+        
+        public IRestResponse openstackScopeTicket(string token, string projid, string ip)
+        {
+            var ticketURL = new RestClient("http://" + ip + "/identity/v3/auth/tokens");
+            var postRequest = new RestRequest("/", Method.POST);
 
-        public void projectList(string token, string ip)
+            var json = "{\"auth\": {\"identity\": {\"methods\": [\"token\"],\"token\": {\"id\": \"" + token + "\"}},\"scope\": {\"project\": {\"id\": \"" + projid + "\"}}}}";
+            postRequest.AddJsonBody(json);
+
+            IRestResponse ticketResponse = ticketURL.Execute(postRequest);
+
+            Console.WriteLine(ticketResponse);
+            return ticketResponse;
+        }
+        public JArray projectList(string token, string ip)
         {
             var projectsURI = new RestClient("http://" +ip+"/identity/v3/auth/projects");
             var getRequest = new RestRequest("/", Method.GET);
@@ -40,13 +53,15 @@ namespace LTIOpenstackProject
             JsonElement root = doc.RootElement;*/
             JObject jObject = JObject.Parse(getResponse.Content);
             JArray projects = (JArray)jObject.SelectToken("projects");
-            foreach(JToken project in projects)
+            /*foreach(JToken project in projects)
             {
                 Console.WriteLine((string)project.SelectToken("id"));
                 Console.WriteLine((string)project.SelectToken("name"));
                 Console.WriteLine((string)project.SelectToken("domain_id"));
-            }
+            }*/
             Console.WriteLine(projects);
+            return projects;
+            
         }
     }
 }
