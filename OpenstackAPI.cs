@@ -38,7 +38,7 @@ namespace LTIOpenstackProject
 
             IRestResponse ticketResponse = ticketURL.Execute(postRequest);
 
-            Console.WriteLine(ticketResponse);
+            //Console.WriteLine(ticketResponse);
             return ticketResponse;
         }
         public JArray projectList(string token, string ip)
@@ -62,6 +62,21 @@ namespace LTIOpenstackProject
             Console.WriteLine(projects);
             return projects;
             
+        }
+
+        public JArray instanceList(string scopeToken,string ip)
+        {
+            var projectsURI = new RestClient("http://" + ip + "/compute/v2.1/servers");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray instances = (JArray)jObject.SelectToken("servers");
+
+            Console.WriteLine(getResponse);
+            return instances;
         }
     }
 }
