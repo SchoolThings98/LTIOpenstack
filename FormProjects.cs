@@ -32,7 +32,7 @@ namespace LTIOpenstackProject
             OpenstackAPI openstack = new OpenstackAPI();
             var projetos = openstack.projectList(authToken, serverIP);
             comboBox1.SelectedItem = null;
-            comboBox1.SelectedText = "Select a Project";
+            comboBox1.SelectedText = "Selecione um Projeto";
             foreach (JToken project in projetos)
             {
                 comboBox1.Items.Add((string)project.SelectToken("name")+"("+(string)project.SelectToken("domain_id")+")-"+(string)project.SelectToken("id"));
@@ -44,7 +44,7 @@ namespace LTIOpenstackProject
 
         private void buttonSelect_Click(object sender, EventArgs e)
         {
-            if(comboBox1.Text== "Select a Project")
+            if(comboBox1.Text== "Selecione um Projeto")
             {
                 MessageBox.Show("Selecione um projeto");
             }
@@ -66,6 +66,11 @@ namespace LTIOpenstackProject
                 scopeToken = responseTicket.Substring(responseTicket.IndexOf("=") + 1);
                 Console.WriteLine(authToken);
                 Console.WriteLine(scopeToken);
+                var instances = openstack.instanceList(scopeToken,serverIP);
+                foreach(JToken intance in instances)
+                {
+                    listBox1.Items.Add((string)intance.SelectToken("id"));
+                }
             }
         }
     }
