@@ -18,6 +18,7 @@ namespace LTIOpenstackProject
         public String serverIP = "";
         public String scopeToken = "";
         public String projectID = "";
+        public JArray projects = null;
         public FormProjects(string token, string ip)
         {
             InitializeComponent();
@@ -32,11 +33,13 @@ namespace LTIOpenstackProject
             Console.WriteLine(serverIP);
             OpenstackAPI openstack = new OpenstackAPI();
             var projetos = openstack.projectList(authToken, serverIP);
+            projects = projetos;
             comboBox1.SelectedItem = null;
             comboBox1.SelectedText = "Selecione um Projeto";
             foreach (JToken project in projetos)
             {
-                comboBox1.Items.Add((string)project.SelectToken("name")+"("+(string)project.SelectToken("domain_id")+")-"+(string)project.SelectToken("id"));
+                //comboBox1.Items.Add((string)project.SelectToken("name")+"("+(string)project.SelectToken("domain_id")+")-"+(string)project.SelectToken("id"));
+                comboBox1.Items.Add((string)project.SelectToken("name") + "-" + (string)project.SelectToken("domain_id"));
                 /*Console.WriteLine((string)project.SelectToken("id"));
                 Console.WriteLine((string)project.SelectToken("name"));
                 Console.WriteLine((string)project.SelectToken("domain_id"));*/
@@ -51,10 +54,14 @@ namespace LTIOpenstackProject
             }
             else
             {
-                var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+                //var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+                var domain = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+                var name = comboBox1.Text.Substring(0,comboBox1.Text.LastIndexOf("-"));
+                Console.WriteLine(domain);
+                Console.WriteLine(name);
                 //MessageBox.Show(projID);
                 OpenstackAPI openstack = new OpenstackAPI();
-                var newTicket = openstack.openstackScopeTicket(authToken, projID, serverIP);
+                var newTicket = openstack.openstackScopeTicket(authToken, name,domain, serverIP);
                 HttpStatusCode statusCode = newTicket.StatusCode;
                 int numericStatusCode = (int)statusCode;
                 //Console.WriteLine(numericStatusCode);
@@ -78,6 +85,17 @@ namespace LTIOpenstackProject
         private void buttonVolumes_Click(object sender, EventArgs e)
         {
             var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+            var domain = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+            var name = comboBox1.Text.Substring(0, comboBox1.Text.LastIndexOf("-"));
+            foreach (JToken project in projects)
+            {
+                if ((string)project.SelectToken("name") == name)
+                {
+                    projID = (string)project.SelectToken("id");
+                    break;
+                }
+
+            }
             FormVolume formVolume = new FormVolume(serverIP,projID,scopeToken);
             formVolume.ShowDialog();
         }

@@ -28,12 +28,12 @@ namespace LTIOpenstackProject
             return ticketResponse;
         }
         
-        public IRestResponse openstackScopeTicket(string token, string projid, string ip)
+        public IRestResponse openstackScopeTicket(string token, string name,string domain, string ip)
         {
             var ticketURL = new RestClient("http://" + ip + "/identity/v3/auth/tokens");
             var postRequest = new RestRequest("/", Method.POST);
 
-            var json = "{\"auth\": {\"identity\": {\"methods\": [\"token\"],\"token\": {\"id\": \"" + token + "\"}},\"scope\": {\"project\": {\"id\": \"" + projid + "\"}}}}";
+            var json = "{\"auth\": {\"identity\": {\"methods\": [\"token\"],\"token\": {\"id\": \"" + token + "\"}},\"scope\": {\"project\": {\"domain\":{\"id\":\""+domain+"\"},\"name\":\""+name+"\"}}}}";
             postRequest.AddJsonBody(json);
 
             IRestResponse ticketResponse = ticketURL.Execute(postRequest);
@@ -41,7 +41,7 @@ namespace LTIOpenstackProject
             //Console.WriteLine(ticketResponse);
             return ticketResponse;
         }
-        public JArray projectList(string token, string ip)
+        public JArray projectList(string token, string ip) 
         {
             var projectsURI = new RestClient("http://" +ip+"/identity/v3/auth/projects");
             var getRequest = new RestRequest("/", Method.GET);
