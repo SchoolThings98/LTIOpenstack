@@ -17,6 +17,7 @@ namespace LTIOpenstackProject
         public String authToken = "";
         public String serverIP = "";
         public String scopeToken = "";
+        public String projectID = "";
         public FormProjects(string token, string ip)
         {
             InitializeComponent();
@@ -72,6 +73,25 @@ namespace LTIOpenstackProject
                     listBox1.Items.Add((string)intance.SelectToken("id"));
                 }
             }
+        }
+
+        private void buttonVolumes_Click(object sender, EventArgs e)
+        {
+            var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+            FormVolume formVolume = new FormVolume(serverIP,projID,scopeToken);
+            formVolume.ShowDialog();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string instance = listBox1.SelectedItem.ToString();
+            listView1.Items.Add(instance);
+        }
+
+        private void buttonImages_Click(object sender, EventArgs e)
+        {
+            FormImage formImage = new FormImage(serverIP,scopeToken);
+            formImage.ShowDialog();
         }
     }
 }

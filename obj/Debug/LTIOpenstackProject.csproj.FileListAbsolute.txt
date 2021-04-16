@@ -84,3 +84,6 @@ C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.GenerateResource.cache
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CoreCompileInputs.cache
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.csproj.CopyComplete
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.Instance.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormVolume.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormImage.resources

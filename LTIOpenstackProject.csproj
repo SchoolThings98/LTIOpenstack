@@ -87,11 +87,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImage.Designer.cs">
+      <DependentUpon>FormImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProjects.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProjects.Designer.cs">
       <DependentUpon>FormProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVolume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVolume.Designer.cs">
+      <DependentUpon>FormVolume.cs</DependentUpon>
     </Compile>
     <Compile Include="Instance.cs">
       <SubType>Form</SubType>
@@ -111,8 +123,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormImage.resx">
+      <DependentUpon>FormImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProjects.resx">
       <DependentUpon>FormProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVolume.resx">
+      <DependentUpon>FormVolume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instance.resx">
       <DependentUpon>Instance.cs</DependentUpon>

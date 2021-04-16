@@ -33,6 +33,14 @@
             this.buttonSelect = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonVolumes = new System.Windows.Forms.Button();
+            this.buttonCreateInstance = new System.Windows.Forms.Button();
+            this.buttonAccessInstance = new System.Windows.Forms.Button();
+            this.buttonRemoveInstance = new System.Windows.Forms.Button();
+            this.buttonImages = new System.Windows.Forms.Button();
+            this.buttonNetwork = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -70,21 +78,104 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(334, 180);
             this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 17);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Instancias";
+            this.label2.Text = "Instancias:";
+            // 
+            // buttonVolumes
+            // 
+            this.buttonVolumes.Location = new System.Drawing.Point(37, 366);
+            this.buttonVolumes.Name = "buttonVolumes";
+            this.buttonVolumes.Size = new System.Drawing.Size(88, 33);
+            this.buttonVolumes.TabIndex = 5;
+            this.buttonVolumes.Text = "Volumes";
+            this.buttonVolumes.UseVisualStyleBackColor = true;
+            this.buttonVolumes.Click += new System.EventHandler(this.buttonVolumes_Click);
+            // 
+            // buttonCreateInstance
+            // 
+            this.buttonCreateInstance.Location = new System.Drawing.Point(380, 108);
+            this.buttonCreateInstance.Name = "buttonCreateInstance";
+            this.buttonCreateInstance.Size = new System.Drawing.Size(132, 30);
+            this.buttonCreateInstance.TabIndex = 6;
+            this.buttonCreateInstance.Text = "Criar Instancia";
+            this.buttonCreateInstance.UseVisualStyleBackColor = true;
+            // 
+            // buttonAccessInstance
+            // 
+            this.buttonAccessInstance.Location = new System.Drawing.Point(380, 183);
+            this.buttonAccessInstance.Name = "buttonAccessInstance";
+            this.buttonAccessInstance.Size = new System.Drawing.Size(132, 30);
+            this.buttonAccessInstance.TabIndex = 7;
+            this.buttonAccessInstance.Text = "Aceder à instacia";
+            this.buttonAccessInstance.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemoveInstance
+            // 
+            this.buttonRemoveInstance.Location = new System.Drawing.Point(380, 258);
+            this.buttonRemoveInstance.Name = "buttonRemoveInstance";
+            this.buttonRemoveInstance.Size = new System.Drawing.Size(132, 30);
+            this.buttonRemoveInstance.TabIndex = 8;
+            this.buttonRemoveInstance.Text = "Remover Instance";
+            this.buttonRemoveInstance.UseVisualStyleBackColor = true;
+            // 
+            // buttonImages
+            // 
+            this.buttonImages.Location = new System.Drawing.Point(191, 366);
+            this.buttonImages.Name = "buttonImages";
+            this.buttonImages.Size = new System.Drawing.Size(93, 33);
+            this.buttonImages.TabIndex = 9;
+            this.buttonImages.Text = "Imagens";
+            this.buttonImages.UseVisualStyleBackColor = true;
+            this.buttonImages.Click += new System.EventHandler(this.buttonImages_Click);
+            // 
+            // buttonNetwork
+            // 
+            this.buttonNetwork.Location = new System.Drawing.Point(353, 366);
+            this.buttonNetwork.Name = "buttonNetwork";
+            this.buttonNetwork.Size = new System.Drawing.Size(90, 33);
+            this.buttonNetwork.TabIndex = 10;
+            this.buttonNetwork.Text = "Redes";
+            this.buttonNetwork.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(591, 116);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(175, 283);
+            this.listView1.TabIndex = 11;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(576, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Informação sobre a Instancia:";
             // 
             // FormProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.buttonNetwork);
+            this.Controls.Add(this.buttonImages);
+            this.Controls.Add(this.buttonRemoveInstance);
+            this.Controls.Add(this.buttonAccessInstance);
+            this.Controls.Add(this.buttonCreateInstance);
+            this.Controls.Add(this.buttonVolumes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonSelect);
@@ -105,5 +196,13 @@
         private System.Windows.Forms.Button buttonSelect;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonVolumes;
+        private System.Windows.Forms.Button buttonCreateInstance;
+        private System.Windows.Forms.Button buttonAccessInstance;
+        private System.Windows.Forms.Button buttonRemoveInstance;
+        private System.Windows.Forms.Button buttonImages;
+        private System.Windows.Forms.Button buttonNetwork;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label3;
     }
 }

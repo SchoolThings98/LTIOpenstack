@@ -78,5 +78,35 @@ namespace LTIOpenstackProject
             Console.WriteLine(getResponse);
             return instances;
         }
+
+
+        public JArray volumeList(string serverIP,string projID,string scopeToken)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + "/volume/v3/"+projID+"/volumes");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray volumes = (JArray)jObject.SelectToken("volumes");
+            Console.WriteLine(getResponse);
+
+            return volumes;
+        }
+
+        public JArray imageList(string serverIP, string scopeToken)
+        {
+            
+            var projectsURI = new RestClient("http://" + serverIP + "/image/v2/images");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray images = (JArray)jObject.SelectToken("images");
+            Console.WriteLine(getResponse);
+            return images;
+        }
     }
 }
