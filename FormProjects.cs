@@ -117,5 +117,11 @@ namespace LTIOpenstackProject
             FormNetwork formNetwork = new FormNetwork(serverIP, scopeToken);
             formNetwork.ShowDialog();
         }
+
+        private void buttonCreateInstance_Click(object sender, EventArgs e)
+        {
+            Instance formInstance = new Instance(serverIP,scopeToken);
+            formInstance.ShowDialog();
+        }
     }
 }

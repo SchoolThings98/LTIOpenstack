@@ -107,6 +107,7 @@
             this.buttonCreateInstance.TabIndex = 6;
             this.buttonCreateInstance.Text = "Criar Instancia";
             this.buttonCreateInstance.UseVisualStyleBackColor = true;
+            this.buttonCreateInstance.Click += new System.EventHandler(this.buttonCreateInstance_Click);
             // 
             // buttonAccessInstance
             // 

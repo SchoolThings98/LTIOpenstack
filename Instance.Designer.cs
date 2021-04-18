@@ -33,12 +33,12 @@ namespace LTIOpenstackProject
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxImages = new System.Windows.Forms.ComboBox();
+            this.comboBoxVolume = new System.Windows.Forms.ComboBox();
+            this.comboBoxFlavor = new System.Windows.Forms.ComboBox();
+            this.comboBoxNetwork = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxCount = new System.Windows.Forms.TextBox();
@@ -91,13 +91,13 @@ namespace LTIOpenstackProject
             this.label4.TabIndex = 3;
             this.label4.Text = "Network da Instância";
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(239, 34);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 22);
-            this.textBox1.TabIndex = 4;
+            this.textBoxName.Location = new System.Drawing.Point(239, 34);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(248, 22);
+            this.textBoxName.TabIndex = 4;
             // 
             // label5
             // 
@@ -110,47 +110,47 @@ namespace LTIOpenstackProject
             this.label5.TabIndex = 5;
             this.label5.Text = "Volume da Instância";
             // 
-            // comboBox1
+            // comboBoxImages
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(239, 222);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 24);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxImages.FormattingEnabled = true;
+            this.comboBoxImages.Location = new System.Drawing.Point(239, 222);
+            this.comboBoxImages.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxImages.Name = "comboBoxImages";
+            this.comboBoxImages.Size = new System.Drawing.Size(248, 24);
+            this.comboBoxImages.TabIndex = 6;
             // 
-            // comboBox2
+            // comboBoxVolume
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(239, 256);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(248, 24);
-            this.comboBox2.TabIndex = 7;
+            this.comboBoxVolume.FormattingEnabled = true;
+            this.comboBoxVolume.Location = new System.Drawing.Point(239, 256);
+            this.comboBoxVolume.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxVolume.Name = "comboBoxVolume";
+            this.comboBoxVolume.Size = new System.Drawing.Size(248, 24);
+            this.comboBoxVolume.TabIndex = 7;
             // 
-            // comboBox3
+            // comboBoxFlavor
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(239, 302);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(248, 24);
-            this.comboBox3.TabIndex = 8;
+            this.comboBoxFlavor.FormattingEnabled = true;
+            this.comboBoxFlavor.Location = new System.Drawing.Point(239, 302);
+            this.comboBoxFlavor.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxFlavor.Name = "comboBoxFlavor";
+            this.comboBoxFlavor.Size = new System.Drawing.Size(248, 24);
+            this.comboBoxFlavor.TabIndex = 8;
             // 
-            // comboBox4
+            // comboBoxNetwork
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(239, 362);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(248, 24);
-            this.comboBox4.TabIndex = 9;
+            this.comboBoxNetwork.FormattingEnabled = true;
+            this.comboBoxNetwork.Location = new System.Drawing.Point(239, 362);
+            this.comboBoxNetwork.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxNetwork.Name = "comboBoxNetwork";
+            this.comboBoxNetwork.Size = new System.Drawing.Size(248, 24);
+            this.comboBoxNetwork.TabIndex = 9;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(151, 449);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(221, 47);
             this.button1.TabIndex = 10;
@@ -219,19 +219,20 @@ namespace LTIOpenstackProject
             this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxNetwork);
+            this.Controls.Add(this.comboBoxFlavor);
+            this.Controls.Add(this.comboBoxVolume);
+            this.Controls.Add(this.comboBoxImages);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Instance";
             this.Text = "Instance";
+            this.Load += new System.EventHandler(this.Instance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,12 +244,12 @@ namespace LTIOpenstackProject
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxImages;
+        private System.Windows.Forms.ComboBox comboBoxVolume;
+        private System.Windows.Forms.ComboBox comboBoxFlavor;
+        private System.Windows.Forms.ComboBox comboBoxNetwork;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxCount;

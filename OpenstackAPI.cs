@@ -134,5 +134,21 @@ namespace LTIOpenstackProject
             Console.WriteLine(getResponse);
             return flavors;
         }
+
+        public void createInstance(string serverIP,string scopeToken,string name, string imageID,string flavorID, string networkID)
+        {
+            Console.WriteLine(imageID);
+            Console.WriteLine(flavorID);
+            Console.WriteLine(networkID);
+            var ticketURL = new RestClient("http://" + serverIP + "/compute/v2.1/servers");
+            var postRequest = new RestRequest("/", Method.POST);
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            var json = "{\"server\":{\"name\":\""+name+"\",\"imageRef\":\""+imageID+"\",\"flavorRef\":\"http://openstack.example.com/flavors/"+flavorID+"\",\"networks\":[{\"uuid\":\""+networkID+"\"}]}}";
+            postRequest.AddJsonBody(json);
+
+            IRestResponse ticketResponse = ticketURL.Execute(postRequest);
+
+            Console.WriteLine(ticketResponse.StatusCode);
+        }
     }
 }
