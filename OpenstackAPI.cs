@@ -108,5 +108,31 @@ namespace LTIOpenstackProject
             Console.WriteLine(getResponse);
             return images;
         }
+
+        public JArray networksList(string serverIP, string scopeToken)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + ":9696/v2.0/networks");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray networks = (JArray)jObject.SelectToken("networks");
+            Console.WriteLine(getResponse);
+            return networks;
+        }
+
+        public JArray flavorList(string serverIP, string scopeToken)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + "/compute/v2.1/flavors");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray flavors = (JArray)jObject.SelectToken("flavors");
+            Console.WriteLine(getResponse);
+            return flavors;
+        }
     }
 }

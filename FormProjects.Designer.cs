@@ -144,6 +144,7 @@
             this.buttonNetwork.TabIndex = 10;
             this.buttonNetwork.Text = "Redes";
             this.buttonNetwork.UseVisualStyleBackColor = true;
+            this.buttonNetwork.Click += new System.EventHandler(this.buttonNetwork_Click);
             // 
             // listView1
             // 

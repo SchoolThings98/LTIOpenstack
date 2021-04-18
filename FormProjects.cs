@@ -111,5 +111,11 @@ namespace LTIOpenstackProject
             FormImage formImage = new FormImage(serverIP,scopeToken);
             formImage.ShowDialog();
         }
+
+        private void buttonNetwork_Click(object sender, EventArgs e)
+        {
+            FormNetwork formNetwork = new FormNetwork(serverIP, scopeToken);
+            formNetwork.ShowDialog();
+        }
     }
 }
