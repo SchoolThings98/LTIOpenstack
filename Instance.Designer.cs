@@ -43,8 +43,13 @@ namespace LTIOpenstackProject
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxCount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxLoadTemplate = new System.Windows.Forms.ComboBox();
             this.radioButtonVolume = new System.Windows.Forms.RadioButton();
+            this.textBoxTemplateName = new System.Windows.Forms.TextBox();
+            this.buttonCreateTemplate = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonSelectTemplate = new System.Windows.Forms.Button();
+            this.buttonRemoveTemplate = new System.Windows.Forms.Button();
+            this.openFileDialogTemplate = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -181,21 +186,12 @@ namespace LTIOpenstackProject
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(559, 34);
+            this.label7.Location = new System.Drawing.Point(597, 30);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "Templates";
-            // 
-            // comboBoxLoadTemplate
-            // 
-            this.comboBoxLoadTemplate.FormattingEnabled = true;
-            this.comboBoxLoadTemplate.Location = new System.Drawing.Point(671, 32);
-            this.comboBoxLoadTemplate.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxLoadTemplate.Name = "comboBoxLoadTemplate";
-            this.comboBoxLoadTemplate.Size = new System.Drawing.Size(248, 24);
-            this.comboBoxLoadTemplate.TabIndex = 14;
             // 
             // radioButtonVolume
             // 
@@ -208,13 +204,66 @@ namespace LTIOpenstackProject
             this.radioButtonVolume.Text = "Volume em vez de Imagem";
             this.radioButtonVolume.UseVisualStyleBackColor = true;
             // 
+            // textBoxTemplateName
+            // 
+            this.textBoxTemplateName.Location = new System.Drawing.Point(650, 67);
+            this.textBoxTemplateName.Name = "textBoxTemplateName";
+            this.textBoxTemplateName.Size = new System.Drawing.Size(208, 22);
+            this.textBoxTemplateName.TabIndex = 16;
+            // 
+            // buttonCreateTemplate
+            // 
+            this.buttonCreateTemplate.Location = new System.Drawing.Point(887, 57);
+            this.buttonCreateTemplate.Name = "buttonCreateTemplate";
+            this.buttonCreateTemplate.Size = new System.Drawing.Size(110, 32);
+            this.buttonCreateTemplate.TabIndex = 17;
+            this.buttonCreateTemplate.Text = "Criar Template";
+            this.buttonCreateTemplate.UseVisualStyleBackColor = true;
+            this.buttonCreateTemplate.Click += new System.EventHandler(this.buttonCreateTemplate_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(599, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 17);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Name";
+            // 
+            // buttonSelectTemplate
+            // 
+            this.buttonSelectTemplate.Location = new System.Drawing.Point(650, 132);
+            this.buttonSelectTemplate.Name = "buttonSelectTemplate";
+            this.buttonSelectTemplate.Size = new System.Drawing.Size(165, 32);
+            this.buttonSelectTemplate.TabIndex = 19;
+            this.buttonSelectTemplate.Text = "Selecionar Template";
+            this.buttonSelectTemplate.UseVisualStyleBackColor = true;
+            this.buttonSelectTemplate.Click += new System.EventHandler(this.buttonSelectTemplate_Click);
+            // 
+            // buttonRemoveTemplate
+            // 
+            this.buttonRemoveTemplate.Location = new System.Drawing.Point(821, 132);
+            this.buttonRemoveTemplate.Name = "buttonRemoveTemplate";
+            this.buttonRemoveTemplate.Size = new System.Drawing.Size(176, 32);
+            this.buttonRemoveTemplate.TabIndex = 20;
+            this.buttonRemoveTemplate.Text = "Remover Template";
+            this.buttonRemoveTemplate.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialogTemplate
+            // 
+            this.openFileDialogTemplate.FileName = "openFileDialogTemplate";
+            // 
             // Instance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.buttonRemoveTemplate);
+            this.Controls.Add(this.buttonSelectTemplate);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.buttonCreateTemplate);
+            this.Controls.Add(this.textBoxTemplateName);
             this.Controls.Add(this.radioButtonVolume);
-            this.Controls.Add(this.comboBoxLoadTemplate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.label6);
@@ -254,7 +303,12 @@ namespace LTIOpenstackProject
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxCount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxLoadTemplate;
         private System.Windows.Forms.RadioButton radioButtonVolume;
+        private System.Windows.Forms.TextBox textBoxTemplateName;
+        private System.Windows.Forms.Button buttonCreateTemplate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonSelectTemplate;
+        private System.Windows.Forms.Button buttonRemoveTemplate;
+        private System.Windows.Forms.OpenFileDialog openFileDialogTemplate;
     }
 }
