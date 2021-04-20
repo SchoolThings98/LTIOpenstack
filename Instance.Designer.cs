@@ -30,11 +30,11 @@ namespace LTIOpenstackProject
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelISO = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelVolume = new System.Windows.Forms.Label();
             this.comboBoxImages = new System.Windows.Forms.ComboBox();
             this.comboBoxVolume = new System.Windows.Forms.ComboBox();
             this.comboBoxFlavor = new System.Windows.Forms.ComboBox();
@@ -50,6 +50,7 @@ namespace LTIOpenstackProject
             this.buttonSelectTemplate = new System.Windows.Forms.Button();
             this.buttonRemoveTemplate = new System.Windows.Forms.Button();
             this.openFileDialogTemplate = new System.Windows.Forms.OpenFileDialog();
+            this.radioButtonISO = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -63,16 +64,16 @@ namespace LTIOpenstackProject
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome da Instância";
             // 
-            // label2
+            // labelISO
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 218);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Imagem da Instância";
+            this.labelISO.AutoSize = true;
+            this.labelISO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelISO.Location = new System.Drawing.Point(17, 218);
+            this.labelISO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelISO.Name = "labelISO";
+            this.labelISO.Size = new System.Drawing.Size(192, 25);
+            this.labelISO.TabIndex = 1;
+            this.labelISO.Text = "Imagem da Instância";
             // 
             // label3
             // 
@@ -104,16 +105,16 @@ namespace LTIOpenstackProject
             this.textBoxName.Size = new System.Drawing.Size(248, 22);
             this.textBoxName.TabIndex = 4;
             // 
-            // label5
+            // labelVolume
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 256);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Volume da Instância";
+            this.labelVolume.AutoSize = true;
+            this.labelVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolume.Location = new System.Drawing.Point(16, 256);
+            this.labelVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(189, 25);
+            this.labelVolume.TabIndex = 5;
+            this.labelVolume.Text = "Volume da Instância";
             // 
             // comboBoxImages
             // 
@@ -196,13 +197,14 @@ namespace LTIOpenstackProject
             // radioButtonVolume
             // 
             this.radioButtonVolume.AutoSize = true;
-            this.radioButtonVolume.Location = new System.Drawing.Point(22, 181);
+            this.radioButtonVolume.Location = new System.Drawing.Point(310, 178);
             this.radioButtonVolume.Name = "radioButtonVolume";
-            this.radioButtonVolume.Size = new System.Drawing.Size(198, 21);
+            this.radioButtonVolume.Size = new System.Drawing.Size(76, 21);
             this.radioButtonVolume.TabIndex = 15;
             this.radioButtonVolume.TabStop = true;
-            this.radioButtonVolume.Text = "Volume em vez de Imagem";
+            this.radioButtonVolume.Text = "Volume";
             this.radioButtonVolume.UseVisualStyleBackColor = true;
+            this.radioButtonVolume.CheckedChanged += new System.EventHandler(this.radioButtonVolume_CheckedChanged);
             // 
             // textBoxTemplateName
             // 
@@ -253,11 +255,24 @@ namespace LTIOpenstackProject
             // 
             this.openFileDialogTemplate.FileName = "openFileDialogTemplate";
             // 
+            // radioButtonISO
+            // 
+            this.radioButtonISO.AutoSize = true;
+            this.radioButtonISO.Location = new System.Drawing.Point(35, 178);
+            this.radioButtonISO.Name = "radioButtonISO";
+            this.radioButtonISO.Size = new System.Drawing.Size(52, 21);
+            this.radioButtonISO.TabIndex = 21;
+            this.radioButtonISO.TabStop = true;
+            this.radioButtonISO.Text = "ISO";
+            this.radioButtonISO.UseVisualStyleBackColor = true;
+            this.radioButtonISO.CheckedChanged += new System.EventHandler(this.radioButtonISO_CheckedChanged);
+            // 
             // Instance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.radioButtonISO);
             this.Controls.Add(this.buttonRemoveTemplate);
             this.Controls.Add(this.buttonSelectTemplate);
             this.Controls.Add(this.label8);
@@ -272,11 +287,11 @@ namespace LTIOpenstackProject
             this.Controls.Add(this.comboBoxFlavor);
             this.Controls.Add(this.comboBoxVolume);
             this.Controls.Add(this.comboBoxImages);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelVolume);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelISO);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Instance";
@@ -290,11 +305,11 @@ namespace LTIOpenstackProject
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelISO;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelVolume;
         private System.Windows.Forms.ComboBox comboBoxImages;
         private System.Windows.Forms.ComboBox comboBoxVolume;
         private System.Windows.Forms.ComboBox comboBoxFlavor;
@@ -310,5 +325,6 @@ namespace LTIOpenstackProject
         private System.Windows.Forms.Button buttonSelectTemplate;
         private System.Windows.Forms.Button buttonRemoveTemplate;
         private System.Windows.Forms.OpenFileDialog openFileDialogTemplate;
+        private System.Windows.Forms.RadioButton radioButtonISO;
     }
 }

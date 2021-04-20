@@ -29,7 +29,7 @@ namespace LTIOpenstackProject
             //Console.WriteLine(images);
             foreach (JToken image in images)
             {
-                listBox1.Items.Add((string)image.SelectToken("name")+"."+ (string)image.SelectToken("disk_format")+" - "+ (string)image.SelectToken("id"));
+                listBox1.Items.Add((string)image.SelectToken("name")+"."+ (string)image.SelectToken("disk_format"));
 
             }
         }

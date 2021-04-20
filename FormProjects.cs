@@ -77,7 +77,7 @@ namespace LTIOpenstackProject
                 var instances = openstack.instanceList(scopeToken,serverIP);
                 foreach(JToken intance in instances)
                 {
-                    listBox1.Items.Add((string)intance.SelectToken("id"));
+                    listBox1.Items.Add((string)intance.SelectToken("name"));
                 }
             }
         }
@@ -120,7 +120,19 @@ namespace LTIOpenstackProject
 
         private void buttonCreateInstance_Click(object sender, EventArgs e)
         {
-            Instance formInstance = new Instance(serverIP,scopeToken);
+            var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+            var domain = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+            var name = comboBox1.Text.Substring(0, comboBox1.Text.LastIndexOf("-"));
+            foreach (JToken project in projects)
+            {
+                if ((string)project.SelectToken("name") == name)
+                {
+                    projID = (string)project.SelectToken("id");
+                    break;
+                }
+
+            }
+            Instance formInstance = new Instance(serverIP,projID,scopeToken);
             formInstance.ShowDialog();
         }
     }

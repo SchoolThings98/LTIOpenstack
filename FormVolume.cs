@@ -33,7 +33,7 @@ namespace LTIOpenstackProject
             //Console.WriteLine(volumes);
             foreach (JToken volume in volumes)
             {
-                listBox1.Items.Add((string)volume.SelectToken("id"));
+                listBox1.Items.Add((string)volume.SelectToken("name"));
                 
             }
 

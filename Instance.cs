@@ -17,14 +17,17 @@ namespace LTIOpenstackProject
     {
         public String serverIP = "";
         public String scopeToken = "";
+        public String projectID = "";
         public JArray imageList = null;
         public JArray flavorsList = null;
         public JArray networksList = null;
-        public Instance(string ip, string token)
+        public JArray volumesList = null;
+        public Instance(string ip,string projID ,string token)
         {
             InitializeComponent();
             serverIP = ip;
             scopeToken = token;
+            projectID = projID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,12 +77,17 @@ namespace LTIOpenstackProject
         private void Instance_Load(object sender, EventArgs e)
         {
             OpenstackAPI openstack = new OpenstackAPI();
+            radioButtonISO.Checked = true;
+            comboBoxVolume.Hide();
+            labelVolume.Hide();
             var images = openstack.imageList(serverIP,scopeToken);
             var flavors = openstack.flavorList(serverIP, scopeToken);
             var networks = openstack.networksList(serverIP, scopeToken);
+            var volumes = openstack.volumeList(serverIP,projectID,scopeToken);
             imageList = images;
             flavorsList = flavors;
             networksList = networks;
+            volumesList = volumes;
             foreach (JToken image in images)
             {
                 comboBoxImages.Items.Add((string)image.SelectToken("name"));
@@ -95,6 +103,14 @@ namespace LTIOpenstackProject
                 comboBoxNetwork.Items.Add((string)network.SelectToken("name"));
 
             }
+            foreach (JToken volume in volumes)
+            {
+                comboBoxVolume.Items.Add((string)volume.SelectToken("name"));
+
+            }
+
+
+
             //comboBoxImages.Items
         }
 
@@ -175,6 +191,24 @@ namespace LTIOpenstackProject
             {
                 comboBoxNetwork.SelectedIndex = comboBoxNetwork.FindStringExact(inputNetwork.InnerText);
             }
+        }
+
+        private void radioButtonVolume_CheckedChanged(object sender, EventArgs e)
+        {
+ 
+            comboBoxImages.Hide();
+            labelISO.Hide();
+            comboBoxVolume.Show();
+            labelVolume.Show();
+        }
+
+        private void radioButtonISO_CheckedChanged(object sender, EventArgs e)
+        {
+
+            comboBoxImages.Show();
+            labelISO.Show();
+            comboBoxVolume.Hide();
+            labelVolume.Hide();
         }
     }
 }
