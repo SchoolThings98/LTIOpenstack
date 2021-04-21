@@ -135,20 +135,39 @@ namespace LTIOpenstackProject
             return flavors;
         }
 
-        public void createInstance(string serverIP,string scopeToken,string name, string imageID,string flavorID, string networkID)
+        public void createInstance(string serverIP,string scopeToken,string name, string imageID,string volumeID,string flavorID, string networkID,string count)
         {
             Console.WriteLine(imageID);
             Console.WriteLine(flavorID);
             Console.WriteLine(networkID);
+            Console.WriteLine(volumeID);
             var ticketURL = new RestClient("http://" + serverIP + "/compute/v2.1/servers");
             var postRequest = new RestRequest("/", Method.POST);
             postRequest.AddHeader("x-auth-token", scopeToken);
-            var json = "{\"server\":{\"name\":\""+name+"\",\"imageRef\":\""+imageID+"\",\"flavorRef\":\"http://openstack.example.com/flavors/"+flavorID+"\",\"networks\":[{\"uuid\":\""+networkID+"\"}]}}";
-            postRequest.AddJsonBody(json);
+            if (imageID!=null) {
+                var json = "{\"server\":{\"name\":\"" + name + "\",\"imageRef\":\"" + imageID + "\",\"flavorRef\":\"http://openstack.example.com/flavors/" + flavorID + "\",\"networks\":[{\"uuid\":\"" + networkID + "\"}],\"min_count\":\""+count+"\"}}";
+                postRequest.AddJsonBody(json);
+            }
+            if (volumeID != null)
+            {
+                var json = "{\"server\":{\"name\":\"" + name + "\",\"flavorRef\":\"http://openstack.example.com/flavors/" + flavorID + "\",\"networks\":[{\"uuid\":\"" + networkID + "\"}],\"block_device_mapping_v2\":[{\"boot_index\":\"-1\",\"uuid\":\""+volumeID+ "\",\"source_type\":\"volume\",\"destination_type\":\"volume\"}]}}";
+                postRequest.AddJsonBody(json);
+            }
 
             IRestResponse ticketResponse = ticketURL.Execute(postRequest);
 
             Console.WriteLine(ticketResponse.StatusCode);
+        }
+
+        public IRestResponse removeInstance(string serverIP, string scopeToken, string instanceID)
+        {
+            var ticketURL = new RestClient("http://" + serverIP + "/compute/v2.1/servers/"+instanceID);
+            var deleteRequest = new RestRequest("/", Method.DELETE);
+            deleteRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse ticketResponse = ticketURL.Execute(deleteRequest);
+            Console.WriteLine(ticketResponse);
+            return ticketResponse;
         }
     }
 }

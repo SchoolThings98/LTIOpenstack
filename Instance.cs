@@ -40,15 +40,33 @@ namespace LTIOpenstackProject
             var flavorid = "";
             var selNetwork = comboBoxNetwork.Text;
             var networkid = "";
-            foreach (JToken image in imageList)
-            {
-                //comboBoxImages.Items.Add((string)image.SelectToken("name"));
-                if ((string)image.SelectToken("name") == selImage)
+            var selVolume = comboBoxVolume.Text;
+            var volumeid = "";
+            var count = textBoxCount.Text;
+            if(radioButtonISO.Checked==true){
+                foreach (JToken image in imageList)
                 {
-                    imageid = (string)image.SelectToken("id");
-                    break;
-                }
+                    //comboBoxImages.Items.Add((string)image.SelectToken("name"));
+                    if ((string)image.SelectToken("name") == selImage)
+                    {
+                        imageid = (string)image.SelectToken("id");
+                        volumeid = null;
+                        break;
+                    }
 
+                }
+            }
+            if (radioButtonVolume.Checked == true)
+            {
+                foreach(JToken volume in volumesList)
+                {
+                    if ((string)volume.SelectToken("name") == selVolume)
+                    {
+                        volumeid = (string)volume.SelectToken("id");
+                        imageid = null;
+                        break;
+                    }
+                }
             }
             foreach (JToken flavor in flavorsList)
             {
@@ -70,7 +88,7 @@ namespace LTIOpenstackProject
                 }
 
             }
-            openstack.createInstance(serverIP,scopeToken,name,imageid,flavorid,networkid);
+            openstack.createInstance(serverIP,scopeToken,name,imageid,volumeid,flavorid,networkid,count);
 
         }
 

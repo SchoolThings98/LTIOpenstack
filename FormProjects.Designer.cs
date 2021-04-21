@@ -41,6 +41,7 @@
             this.buttonNetwork = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -111,7 +112,7 @@
             // 
             // buttonAccessInstance
             // 
-            this.buttonAccessInstance.Location = new System.Drawing.Point(380, 183);
+            this.buttonAccessInstance.Location = new System.Drawing.Point(380, 201);
             this.buttonAccessInstance.Name = "buttonAccessInstance";
             this.buttonAccessInstance.Size = new System.Drawing.Size(132, 30);
             this.buttonAccessInstance.TabIndex = 7;
@@ -126,6 +127,7 @@
             this.buttonRemoveInstance.TabIndex = 8;
             this.buttonRemoveInstance.Text = "Remover Instance";
             this.buttonRemoveInstance.UseVisualStyleBackColor = true;
+            this.buttonRemoveInstance.Click += new System.EventHandler(this.buttonRemoveInstance_Click);
             // 
             // buttonImages
             // 
@@ -165,11 +167,21 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Informação sobre a Instancia:";
             // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(380, 153);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(126, 33);
+            this.buttonEdit.TabIndex = 13;
+            this.buttonEdit.Text = "Editar Instancia";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
             // FormProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonNetwork);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.Button buttonNetwork;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonEdit;
     }
 }

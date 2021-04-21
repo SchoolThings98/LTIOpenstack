@@ -19,6 +19,7 @@ namespace LTIOpenstackProject
         public String scopeToken = "";
         public String projectID = "";
         public JArray projects = null;
+        public JArray instancesList = null;
         public FormProjects(string token, string ip)
         {
             InitializeComponent();
@@ -75,6 +76,7 @@ namespace LTIOpenstackProject
                 Console.WriteLine(authToken);
                 Console.WriteLine(scopeToken);
                 var instances = openstack.instanceList(scopeToken,serverIP);
+                instancesList = instances;
                 foreach(JToken intance in instances)
                 {
                     listBox1.Items.Add((string)intance.SelectToken("name"));
@@ -102,8 +104,8 @@ namespace LTIOpenstackProject
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string instance = listBox1.SelectedItem.ToString();
-            listView1.Items.Add(instance);
+            //string instance = listBox1.SelectedItem.ToString();
+            //listView1.Items.Add(instance);
         }
 
         private void buttonImages_Click(object sender, EventArgs e)
@@ -134,6 +136,35 @@ namespace LTIOpenstackProject
             }
             Instance formInstance = new Instance(serverIP,projID,scopeToken);
             formInstance.ShowDialog();
+        }
+
+        private void buttonRemoveInstance_Click(object sender, EventArgs e)
+        {
+            var instanceName = listBox1.SelectedItem.ToString();
+            var instanceID = "";
+            foreach (JToken instance in instancesList)
+            {
+                if ((string)instance.SelectToken("name") == instanceName)
+                {
+                    instanceID = (string)instance.SelectToken("id");
+                    break;
+                }
+
+            }
+            OpenstackAPI openstack = new OpenstackAPI();
+            var response = openstack.removeInstance(serverIP,scopeToken,instanceID);
+            HttpStatusCode statusCode = response.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            Console.WriteLine(numericStatusCode);
+            if (numericStatusCode != 204)
+            {
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
+            }
+            else
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
         }
     }
 }
