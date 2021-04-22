@@ -30,6 +30,7 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonUploadImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -50,11 +51,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Images";
             // 
+            // buttonUploadImage
+            // 
+            this.buttonUploadImage.Location = new System.Drawing.Point(566, 71);
+            this.buttonUploadImage.Name = "buttonUploadImage";
+            this.buttonUploadImage.Size = new System.Drawing.Size(160, 37);
+            this.buttonUploadImage.TabIndex = 2;
+            this.buttonUploadImage.Text = "Adicionar Imagem";
+            this.buttonUploadImage.UseVisualStyleBackColor = true;
+            // 
             // FormImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonUploadImage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Name = "FormImage";
@@ -69,5 +80,6 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonUploadImage;
     }
 }

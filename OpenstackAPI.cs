@@ -169,5 +169,59 @@ namespace LTIOpenstackProject
             Console.WriteLine(ticketResponse);
             return ticketResponse;
         }
+
+        public JArray volumeTypeList(string serverIP, string projID, string scopeToken)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + "/volume/v3/" + projID + "/types");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray volumesTypes = (JArray)jObject.SelectToken("volume_types");
+
+
+            return volumesTypes;
+        }
+
+        public string volumeSize(string serverIP, string projID, string scopeToken,string volID)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + "/volume/v3/" + projID + "/volumes/"+volID);
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            //JArray volume = (JArray)jObject.SelectToken("volume");
+            string size = (string)jObject["volume"].SelectToken("size");
+            return size;
+        }
+
+        public IRestResponse createVolume(string serverIP, string projID, string scopeToken, string name, string size,string volID,string imageID,string type)
+        {
+            var createVolume = new RestClient("http://" + serverIP + "/volume/v3/" + projID + "/volumes");
+            var postRequest = new RestRequest("/", Method.POST);
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            var json= "";
+            if (volID!=null)
+            {
+                json = "{\"volume\": {\"size\":" + size + ",\"availability_zone\": \"nova\",\"source_volid\": \""+volID+"\",\"description\": null,\"multiattach\": false,\"snapshot_id\": null,\"backup_id\": null,\"name\":\"" + name + "\",\"imageRef\": null,\"volume_type\":\"" + type + "\"}}";
+            }
+            else if (imageID!=null)
+            {
+                json = "{\"volume\": {\"size\":" + size + ",\"availability_zone\": \"nova\",\"source_volid\": null,\"description\": null,\"multiattach\": false,\"snapshot_id\": null,\"backup_id\": null,\"name\":\"" + name + "\",\"imageRef\": \""+imageID+"\",\"volume_type\":\"" + type + "\"}}";
+            }
+            else
+            {
+                json = "{\"volume\": {\"size\":" + size + ",\"availability_zone\": \"nova\",\"source_volid\": null,\"description\": null,\"multiattach\": false,\"snapshot_id\": null,\"backup_id\": null,\"name\":\"" + name + "\",\"imageRef\": null,\"volume_type\":\"" + type + "\"}}";
+            }
+            
+            postRequest.AddJsonBody(json);
+            IRestResponse ticketResponse = createVolume.Execute(postRequest);
+            Console.WriteLine(ticketResponse);
+            return ticketResponse;
+        }
     }
 }

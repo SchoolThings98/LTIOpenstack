@@ -88,3 +88,4 @@ D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormVolume.resources
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormImage.resources
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormNetwork.resources
+D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormCreateVolume.resources

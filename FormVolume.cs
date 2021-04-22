@@ -38,5 +38,11 @@ namespace LTIOpenstackProject
             }
 
         }
+
+        private void buttonCreateVolume_Click(object sender, EventArgs e)
+        {
+            FormCreateVolume formCreateVolume = new FormCreateVolume(serverIP,projectID,scopeToken);
+            formCreateVolume.Show();
+        }
     }
 }
