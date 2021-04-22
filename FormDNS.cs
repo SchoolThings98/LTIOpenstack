@@ -25,10 +25,12 @@ namespace LTIOpenstackProject
         private void FormDNS_Load(object sender, EventArgs e)
         {
             OpenstackAPI openstack = new OpenstackAPI();
-            /*var zones = openstack.zonesList(serverIP, scopeToken);
+           /* var zones = openstack.zonesList(serverIP, scopeToken);
+            //Console.WriteLine(networks);
             foreach (JToken zone in zones)
             {
                 listBox1.Items.Add((string)zone.SelectToken("name"));
+
             }*/
         }
     }
