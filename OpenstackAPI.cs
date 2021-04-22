@@ -135,6 +135,19 @@ namespace LTIOpenstackProject
             return flavors;
         }
 
+        /*public JArray zonesList(string serverIP, string scopeToken)
+        {
+            var projectsURI = new RestClient("http://" + serverIP + ":9001/v2/zones");
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+            IRestResponse getResponse = projectsURI.Execute(getRequest);
+            JObject jObject = JObject.Parse(getResponse.Content);
+            JArray zones = (JArray)jObject.SelectToken("zones");
+            Console.WriteLine(getResponse);
+            return zones;
+        }*/
+
         public void createInstance(string serverIP,string scopeToken,string name, string imageID,string volumeID,string flavorID, string networkID,string count)
         {
             Console.WriteLine(imageID);

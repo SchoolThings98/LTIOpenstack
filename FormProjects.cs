@@ -166,5 +166,11 @@ namespace LTIOpenstackProject
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
         }
+
+        private void buttonDNS_Click(object sender, EventArgs e)
+        {
+            FormDNS formDNS = new FormDNS(serverIP, scopeToken);
+            formDNS.ShowDialog();
+        }
     }
 }
