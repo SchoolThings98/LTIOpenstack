@@ -30,6 +30,7 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonCreateVolume = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -50,11 +51,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Volumes:";
             // 
+            // buttonCreateVolume
+            // 
+            this.buttonCreateVolume.Location = new System.Drawing.Point(344, 44);
+            this.buttonCreateVolume.Name = "buttonCreateVolume";
+            this.buttonCreateVolume.Size = new System.Drawing.Size(106, 31);
+            this.buttonCreateVolume.TabIndex = 2;
+            this.buttonCreateVolume.Text = "Criar Volume";
+            this.buttonCreateVolume.UseVisualStyleBackColor = true;
+            this.buttonCreateVolume.Click += new System.EventHandler(this.buttonCreateVolume_Click);
+            // 
             // FormVolume
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCreateVolume);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Name = "FormVolume";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonCreateVolume;
     }
 }
