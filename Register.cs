@@ -35,5 +35,10 @@ namespace LTIOpenstackProject
                 MessageBox.Show("Preencha todos os campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LTIOpenstackProject
 {
@@ -135,9 +136,9 @@ namespace LTIOpenstackProject
             return flavors;
         }
 
-        /*public JArray zonesList(string serverIP, string scopeToken)
+        public JArray zonesList(string serverIP, string scopeToken)
         {
-            var projectsURI = new RestClient("http://" + serverIP + ":9001/v2/zones");
+            var projectsURI = new RestClient("http://" + serverIP + "/dns/v2/zones");
             var getRequest = new RestRequest("/", Method.GET);
 
             getRequest.AddHeader("x-auth-token", scopeToken);
@@ -146,7 +147,21 @@ namespace LTIOpenstackProject
             JArray zones = (JArray)jObject.SelectToken("zones");
             Console.WriteLine(getResponse);
             return zones;
-        }*/
+
+        }
+
+        public IRestResponse createZone(string serverIP, string scopeToken, string name, string email)
+        {
+            var createZone = new RestClient("http://" + serverIP + "/dns/v2/zones");
+            var postRequest = new RestRequest("/", Method.POST);
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            var json = "{\"name\":\"" + name + "\",\"email\":\"" + email + "\"}";
+            postRequest.AddJsonBody(json);
+            IRestResponse ticketResponse = createZone.Execute(postRequest);
+            Console.WriteLine(ticketResponse);
+            return ticketResponse;
+
+        }
 
         public void createInstance(string serverIP,string scopeToken,string name, string imageID,string volumeID,string flavorID, string networkID,string count)
         {
@@ -193,7 +208,6 @@ namespace LTIOpenstackProject
             IRestResponse getResponse = projectsURI.Execute(getRequest);
             JObject jObject = JObject.Parse(getResponse.Content);
             JArray volumesTypes = (JArray)jObject.SelectToken("volume_types");
-
 
             return volumesTypes;
         }

@@ -80,6 +80,7 @@
             this.btnCreateZone.TabIndex = 4;
             this.btnCreateZone.Text = "Criar Zona";
             this.btnCreateZone.UseVisualStyleBackColor = true;
+            this.btnCreateZone.Click += new System.EventHandler(this.btnCreateZone_Click);
             // 
             // btnUpdateZone
             // 

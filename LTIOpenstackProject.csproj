@@ -93,6 +93,12 @@
     <Compile Include="FormCreateVolume.Designer.cs">
       <DependentUpon>FormCreateVolume.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCreateZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateZone.Designer.cs">
+      <DependentUpon>FormCreateZone.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDNS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateVolume.resx">
       <DependentUpon>FormCreateVolume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateZone.resx">
+      <DependentUpon>FormCreateZone.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDNS.resx">
       <DependentUpon>FormDNS.cs</DependentUpon>

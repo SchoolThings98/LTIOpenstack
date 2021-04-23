@@ -94,3 +94,4 @@ C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormImage.resources
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormNetwork.resources
 C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormVolume.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormCreateZone.resources
