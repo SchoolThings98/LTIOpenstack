@@ -31,6 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonUploadImage = new System.Windows.Forms.Button();
+            this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // listBox1
@@ -59,6 +60,11 @@
             this.buttonUploadImage.TabIndex = 2;
             this.buttonUploadImage.Text = "Adicionar Imagem";
             this.buttonUploadImage.UseVisualStyleBackColor = true;
+            this.buttonUploadImage.Click += new System.EventHandler(this.buttonUploadImage_Click);
+            // 
+            // openFileDialogImage
+            // 
+            this.openFileDialogImage.FileName = "openFileDialogImage";
             // 
             // FormImage
             // 
@@ -81,5 +87,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonUploadImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImage;
     }
 }

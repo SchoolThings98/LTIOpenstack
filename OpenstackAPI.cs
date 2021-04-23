@@ -236,5 +236,30 @@ namespace LTIOpenstackProject
             Console.WriteLine(ticketResponse);
             return ticketResponse;
         }
+
+        public void createImage(string serverIP, string scopeToken, string path)
+        {
+            var createImg = new RestClient("http://" + serverIP + "/image/v2/images");
+            var postRequest = new RestRequest("/", Method.POST);
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            //string beforeFormat = path.Substring(0, path.LastIndexOf("."));
+            string name = path.Substring(path.LastIndexOf("\\") + 1);
+            string nameNoFormat = name.Substring(0,name.LastIndexOf("."));
+            string format = path.Substring(path.LastIndexOf(".") + 1);
+            Console.WriteLine(name + "  Formato: " + format);
+            var json = "{\"container_format\":\"bare\",\"disk_format\": \"" + format + "\",\"name\": \"" + nameNoFormat + "\",\"visibility\": \"shared\"}";
+            postRequest.AddJsonBody(json);
+            IRestResponse createResponse = createImg.Execute(postRequest);
+            JObject reservedImg = JObject.Parse(createResponse.Content);
+            var imgID = (string)reservedImg.SelectToken("id");
+            Console.WriteLine(imgID);
+            var uploadImg = new RestClient("http://" + serverIP + "/image/v2/images/" + imgID + "/file");
+            var putRequest = new RestRequest("/", Method.PUT);
+            putRequest.AddHeader("x-auth-token", scopeToken);
+            putRequest.AddFile(name, path, "application/octet-stream");
+
+            IRestResponse uploadResponse = uploadImg.Execute(putRequest);
+            Console.WriteLine(uploadResponse);
+        }
     }
 }

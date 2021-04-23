@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LTIOpenstackProject
 {
     public partial class FormImage : Form
@@ -32,6 +33,25 @@ namespace LTIOpenstackProject
                 listBox1.Items.Add((string)image.SelectToken("name")+"."+ (string)image.SelectToken("disk_format"));
 
             }
+        }
+
+        private void buttonUploadImage_Click(object sender, EventArgs e)
+        {
+            var fileName = "";
+            openFileDialogImage.InitialDirectory = Application.StartupPath + @"\templates";
+            openFileDialogImage.Filter = "iso files (*.iso)|*.iso";
+            if (openFileDialogImage.ShowDialog() == DialogResult.OK)
+            {
+                fileName = openFileDialogImage.FileName;
+                MessageBox.Show("Ficheiro" + fileName + " open with SUCCESS! ");
+            }
+            else
+            {
+                MessageBox.Show("Erro trying to open the selected file!!!");
+                return;
+            }
+            OpenstackAPI openstack = new OpenstackAPI();
+            openstack.createImage(serverIP, scopeToken, fileName);
         }
     }
 }
