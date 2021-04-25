@@ -43,33 +43,33 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDNS = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 22);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(131, 63);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(362, 21);
+            this.comboBox1.Size = new System.Drawing.Size(481, 24);
             this.comboBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(113, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lista de projetos";
             // 
             // buttonSelect
             // 
-            this.buttonSelect.Location = new System.Drawing.Point(483, 20);
-            this.buttonSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSelect.Location = new System.Drawing.Point(660, 63);
+            this.buttonSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(92, 22);
+            this.buttonSelect.Size = new System.Drawing.Size(123, 27);
             this.buttonSelect.TabIndex = 2;
             this.buttonSelect.Text = "Selecionar";
             this.buttonSelect.UseVisualStyleBackColor = true;
@@ -78,29 +78,29 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(11, 88);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(15, 140);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(252, 147);
+            this.listBox1.Size = new System.Drawing.Size(384, 228);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(12, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Instancias:";
             // 
             // buttonVolumes
             // 
-            this.buttonVolumes.Location = new System.Drawing.Point(12, 298);
-            this.buttonVolumes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonVolumes.Location = new System.Drawing.Point(37, 416);
+            this.buttonVolumes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonVolumes.Name = "buttonVolumes";
-            this.buttonVolumes.Size = new System.Drawing.Size(66, 27);
+            this.buttonVolumes.Size = new System.Drawing.Size(88, 33);
             this.buttonVolumes.TabIndex = 5;
             this.buttonVolumes.Text = "Volumes";
             this.buttonVolumes.UseVisualStyleBackColor = true;
@@ -108,10 +108,10 @@
             // 
             // buttonCreateInstance
             // 
-            this.buttonCreateInstance.Location = new System.Drawing.Point(285, 88);
-            this.buttonCreateInstance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCreateInstance.Location = new System.Drawing.Point(418, 146);
+            this.buttonCreateInstance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCreateInstance.Name = "buttonCreateInstance";
-            this.buttonCreateInstance.Size = new System.Drawing.Size(99, 24);
+            this.buttonCreateInstance.Size = new System.Drawing.Size(132, 30);
             this.buttonCreateInstance.TabIndex = 6;
             this.buttonCreateInstance.Text = "Criar Instancia";
             this.buttonCreateInstance.UseVisualStyleBackColor = true;
@@ -119,20 +119,20 @@
             // 
             // buttonAccessInstance
             // 
-            this.buttonAccessInstance.Location = new System.Drawing.Point(285, 163);
-            this.buttonAccessInstance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAccessInstance.Location = new System.Drawing.Point(418, 274);
+            this.buttonAccessInstance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAccessInstance.Name = "buttonAccessInstance";
-            this.buttonAccessInstance.Size = new System.Drawing.Size(99, 24);
+            this.buttonAccessInstance.Size = new System.Drawing.Size(132, 30);
             this.buttonAccessInstance.TabIndex = 7;
             this.buttonAccessInstance.Text = "Aceder à instacia";
             this.buttonAccessInstance.UseVisualStyleBackColor = true;
             // 
             // buttonRemoveInstance
             // 
-            this.buttonRemoveInstance.Location = new System.Drawing.Point(285, 210);
-            this.buttonRemoveInstance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRemoveInstance.Location = new System.Drawing.Point(418, 333);
+            this.buttonRemoveInstance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRemoveInstance.Name = "buttonRemoveInstance";
-            this.buttonRemoveInstance.Size = new System.Drawing.Size(99, 24);
+            this.buttonRemoveInstance.Size = new System.Drawing.Size(132, 30);
             this.buttonRemoveInstance.TabIndex = 8;
             this.buttonRemoveInstance.Text = "Remover Instance";
             this.buttonRemoveInstance.UseVisualStyleBackColor = true;
@@ -140,10 +140,10 @@
             // 
             // buttonImages
             // 
-            this.buttonImages.Location = new System.Drawing.Point(98, 298);
-            this.buttonImages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonImages.Location = new System.Drawing.Point(172, 416);
+            this.buttonImages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonImages.Name = "buttonImages";
-            this.buttonImages.Size = new System.Drawing.Size(70, 27);
+            this.buttonImages.Size = new System.Drawing.Size(93, 33);
             this.buttonImages.TabIndex = 9;
             this.buttonImages.Text = "Imagens";
             this.buttonImages.UseVisualStyleBackColor = true;
@@ -151,10 +151,10 @@
             // 
             // buttonNetwork
             // 
-            this.buttonNetwork.Location = new System.Drawing.Point(195, 297);
-            this.buttonNetwork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNetwork.Location = new System.Drawing.Point(308, 416);
+            this.buttonNetwork.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNetwork.Name = "buttonNetwork";
-            this.buttonNetwork.Size = new System.Drawing.Size(68, 27);
+            this.buttonNetwork.Size = new System.Drawing.Size(91, 33);
             this.buttonNetwork.TabIndex = 10;
             this.buttonNetwork.Text = "Redes";
             this.buttonNetwork.UseVisualStyleBackColor = true;
@@ -163,48 +163,59 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(443, 94);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Location = new System.Drawing.Point(626, 140);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(132, 231);
+            this.listView1.Size = new System.Drawing.Size(175, 310);
             this.listView1.TabIndex = 11;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(432, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(607, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 13);
+            this.label3.Size = new System.Drawing.Size(194, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "Informação sobre a Instancia:";
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(285, 124);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEdit.Location = new System.Drawing.Point(418, 211);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(94, 27);
+            this.buttonEdit.Size = new System.Drawing.Size(132, 33);
             this.buttonEdit.TabIndex = 13;
             this.buttonEdit.Text = "Editar Instancia";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDNS
             // 
-            this.buttonDNS.Location = new System.Drawing.Point(285, 297);
+            this.buttonDNS.Location = new System.Drawing.Point(464, 416);
+            this.buttonDNS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDNS.Name = "buttonDNS";
-            this.buttonDNS.Size = new System.Drawing.Size(94, 28);
+            this.buttonDNS.Size = new System.Drawing.Size(125, 34);
             this.buttonDNS.TabIndex = 14;
             this.buttonDNS.Text = "Serviço DNS";
             this.buttonDNS.UseVisualStyleBackColor = true;
             this.buttonDNS.Click += new System.EventHandler(this.buttonDNS_Click);
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Location = new System.Drawing.Point(362, 12);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(132, 32);
+            this.buttonLogout.TabIndex = 15;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            // 
             // FormProjects
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(862, 510);
+            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonDNS);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.label3);
@@ -220,7 +231,7 @@
             this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormProjects";
             this.Text = "FormProjects";
             this.Load += new System.EventHandler(this.FormProjects_Load);
@@ -246,5 +257,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDNS;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }

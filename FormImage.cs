@@ -38,7 +38,7 @@ namespace LTIOpenstackProject
         private void buttonUploadImage_Click(object sender, EventArgs e)
         {
             var fileName = "";
-            openFileDialogImage.InitialDirectory = Application.StartupPath + @"\templates";
+            //openFileDialogImage.InitialDirectory = Application.StartupPath + @"\templates";
             openFileDialogImage.Filter = "iso files (*.iso)|*.iso";
             if (openFileDialogImage.ShowDialog() == DialogResult.OK)
             {

@@ -275,5 +275,30 @@ namespace LTIOpenstackProject
             IRestResponse uploadResponse = uploadImg.Execute(putRequest);
             Console.WriteLine(uploadResponse);
         }
+
+        public IRestResponse getInstance(string serverIP, string scopeToken, string serverID)
+        {
+            var instanceURI = new RestClient("http://" + serverIP + "/compute/v2.1/servers/" + serverID);
+            var getRequest = new RestRequest("/", Method.GET);
+
+            getRequest.AddHeader("x-auth-token", scopeToken);
+
+            IRestResponse getResponse = instanceURI.Execute(getRequest);
+            return getResponse;
+        }
+
+        public void EditInstance(string serverIP, string scopeToken, string serverID, string name,string desc)
+        {
+            var instanceURI = new RestClient("http://" + serverIP + "/compute/v2.1/servers/" + serverID);
+            var putRequest = new RestRequest("/", Method.PUT);
+
+            //var json = "{\"server\": {\"name\": \""+name+ "\",\"description\": \"Sample description\"}}";
+            var json = "{\"server\": {\"name\": \"" + name + "\"}}";
+            putRequest.AddHeader("x-auth-token", scopeToken);
+            putRequest.AddJsonBody(json);
+
+            IRestResponse getResponse = instanceURI.Execute(putRequest);
+            Console.WriteLine(getResponse);
+        }
     }
 }

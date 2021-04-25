@@ -172,5 +172,22 @@ namespace LTIOpenstackProject
             FormDNS formDNS = new FormDNS(serverIP, scopeToken);
             formDNS.ShowDialog();
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            var instanceName = listBox1.SelectedItem.ToString();
+            var instanceID = "";
+            foreach (JToken instance in instancesList)
+            {
+                if ((string)instance.SelectToken("name") == instanceName)
+                {
+                    instanceID = (string)instance.SelectToken("id");
+                    break;
+                }
+
+            }
+            FormEditInstance formEditInstance = new FormEditInstance(serverIP,scopeToken,instanceID);
+            formEditInstance.Show();
+        }
     }
 }
