@@ -3,6 +3,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -163,7 +164,7 @@ namespace LTIOpenstackProject
 
         }
 
-        public void createInstance(string serverIP,string scopeToken,string name, string imageID,string volumeID,string flavorID, string networkID,string count)
+        public IRestResponse createInstance(string serverIP,string scopeToken,string name, string imageID,string volumeID,string flavorID, string networkID,string count)
         {
             Console.WriteLine(imageID);
             Console.WriteLine(flavorID);
@@ -184,7 +185,9 @@ namespace LTIOpenstackProject
 
             IRestResponse ticketResponse = ticketURL.Execute(postRequest);
 
+
             Console.WriteLine(ticketResponse.StatusCode);
+            return ticketResponse;
         }
 
         public IRestResponse removeInstance(string serverIP, string scopeToken, string instanceID)

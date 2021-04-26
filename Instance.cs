@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -88,7 +89,20 @@ namespace LTIOpenstackProject
                 }
 
             }
-            openstack.createInstance(serverIP,scopeToken,name,imageid,volumeid,flavorid,networkid,count);
+            var code =openstack.createInstance(serverIP,scopeToken,name,imageid,volumeid,flavorid,networkid,count);
+            HttpStatusCode statusCode = code.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            //Console.WriteLine(numericStatusCode);
+            if (numericStatusCode != 202)
+            {
+                MessageBox.Show(code.StatusCode.ToString());
+                return;
+            }
+            else
+            {
+                MessageBox.Show(code.StatusCode.ToString());
+                this.Close();
+            }
 
         }
 

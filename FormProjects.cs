@@ -45,6 +45,19 @@ namespace LTIOpenstackProject
                 Console.WriteLine((string)project.SelectToken("name"));
                 Console.WriteLine((string)project.SelectToken("domain_id"));*/
             }
+            listBox1.Hide();
+            listView1.Hide();
+            label2.Hide();
+            label3.Hide();
+            buttonCreateInstance.Hide();
+            buttonDNS.Hide();
+            buttonEdit.Hide();
+            buttonAccessInstance.Hide();
+            buttonRemoveInstance.Hide();
+            buttonVolumes.Hide();
+            buttonImages.Hide();
+            buttonNetwork.Hide();
+            
         }
 
         private void buttonSelect_Click(object sender, EventArgs e)
@@ -56,6 +69,7 @@ namespace LTIOpenstackProject
             else
             {
                 //var projID = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
+                listBox1.Items.Clear();
                 var domain = comboBox1.Text.Substring(comboBox1.Text.LastIndexOf("-") + 1);
                 var name = comboBox1.Text.Substring(0,comboBox1.Text.LastIndexOf("-"));
                 Console.WriteLine(domain);
@@ -75,6 +89,18 @@ namespace LTIOpenstackProject
                 scopeToken = responseTicket.Substring(responseTicket.IndexOf("=") + 1);
                 Console.WriteLine(authToken);
                 Console.WriteLine(scopeToken);
+                listBox1.Show();
+                listView1.Show();
+                label2.Hide();
+                label3.Hide();
+                buttonCreateInstance.Show();
+                buttonDNS.Show();
+                buttonEdit.Show();
+                buttonAccessInstance.Show();
+                buttonRemoveInstance.Show();
+                buttonVolumes.Show();
+                buttonImages.Show();
+                buttonNetwork.Show();
                 var instances = openstack.instanceList(scopeToken,serverIP);
                 instancesList = instances;
                 foreach(JToken intance in instances)
@@ -140,6 +166,11 @@ namespace LTIOpenstackProject
 
         private void buttonRemoveInstance_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione uma instancia para remover");
+                return;
+            }
             var instanceName = listBox1.SelectedItem.ToString();
             var instanceID = "";
             foreach (JToken instance in instancesList)
@@ -188,6 +219,11 @@ namespace LTIOpenstackProject
             }
             FormEditInstance formEditInstance = new FormEditInstance(serverIP,scopeToken,instanceID);
             formEditInstance.Show();
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

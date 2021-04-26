@@ -193,7 +193,7 @@
             // buttonDNS
             // 
             this.buttonDNS.Location = new System.Drawing.Point(464, 416);
-            this.buttonDNS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDNS.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDNS.Name = "buttonDNS";
             this.buttonDNS.Size = new System.Drawing.Size(125, 34);
             this.buttonDNS.TabIndex = 14;
@@ -209,6 +209,7 @@
             this.buttonLogout.TabIndex = 15;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // FormProjects
             // 
