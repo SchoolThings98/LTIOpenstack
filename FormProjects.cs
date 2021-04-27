@@ -225,5 +225,73 @@ namespace LTIOpenstackProject
         {
             
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione uma instancia para iniciar");
+                return;
+            }
+            var instanceName = listBox1.SelectedItem.ToString();
+            var instanceID = "";
+            foreach (JToken instance in instancesList)
+            {
+                if ((string)instance.SelectToken("name") == instanceName)
+                {
+                    instanceID = (string)instance.SelectToken("id");
+                    break;
+                }
+
+            }
+            OpenstackAPI openstack = new OpenstackAPI();
+            var response = openstack.startInstance(serverIP,scopeToken,instanceID);
+            HttpStatusCode statusCode = response.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            if (numericStatusCode != 202)
+            {
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
+            }
+            else
+            {
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
+            }
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione uma instancia para parar");
+                return;
+            }
+            var instanceName = listBox1.SelectedItem.ToString();
+            var instanceID = "";
+            foreach (JToken instance in instancesList)
+            {
+                if ((string)instance.SelectToken("name") == instanceName)
+                {
+                    instanceID = (string)instance.SelectToken("id");
+                    break;
+                }
+
+            }
+            OpenstackAPI openstack = new OpenstackAPI();
+            var response = openstack.stopInstance(serverIP, scopeToken, instanceID);
+            HttpStatusCode statusCode = response.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            if (numericStatusCode != 202)
+            {
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
+            }
+            else
+            {
+                MessageBox.Show(response.StatusCode.ToString());
+                return;
+            }
+        }
     }
 }

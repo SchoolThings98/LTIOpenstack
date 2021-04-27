@@ -303,5 +303,31 @@ namespace LTIOpenstackProject
             IRestResponse getResponse = instanceURI.Execute(putRequest);
             Console.WriteLine(getResponse);
         }
+
+        public IRestResponse startInstance(string serverIP, string scopeToken, string serverID)
+        {
+            var instanceURI = new RestClient("http://" + serverIP + "/compute/v2.1/servers/"+ serverID+"/action");
+            var postRequest = new RestRequest("/", Method.POST);
+
+            var json = "{\"os-start\": null}";
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            postRequest.AddJsonBody(json);
+
+            IRestResponse getResponse = instanceURI.Execute(postRequest);
+            return getResponse;
+        }
+
+        public IRestResponse stopInstance(string serverIP, string scopeToken, string serverID)
+        {
+            var instanceURI = new RestClient("http://" + serverIP + "/compute/v2.1/servers/" + serverID + "/action");
+            var postRequest = new RestRequest("/", Method.POST);
+
+            var json = "{\"os-stop\": null}";
+            postRequest.AddHeader("x-auth-token", scopeToken);
+            postRequest.AddJsonBody(json);
+
+            IRestResponse getResponse = instanceURI.Execute(postRequest);
+            return getResponse;
+        }
     }
 }
