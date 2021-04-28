@@ -104,7 +104,7 @@ namespace LTIOpenstackProject
                 else
                 {
                     MessageBox.Show(response.StatusCode.ToString());
-                    this.Close();
+                    return;
                 }
 
             }
@@ -122,7 +122,7 @@ namespace LTIOpenstackProject
                 else
                 {
                     MessageBox.Show(response.StatusCode.ToString());
-                    this.Close();
+                    return;
                 }
             }
             else
@@ -147,7 +147,7 @@ namespace LTIOpenstackProject
                 else
                 {
                     MessageBox.Show(response.StatusCode.ToString());
-                    this.Close();
+                    return;
                 }
             }
             

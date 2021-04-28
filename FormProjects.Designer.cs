@@ -44,8 +44,6 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDNS = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.buttonStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -121,18 +119,17 @@
             // 
             // buttonAccessInstance
             // 
-            this.buttonAccessInstance.Location = new System.Drawing.Point(418, 217);
+            this.buttonAccessInstance.Location = new System.Drawing.Point(418, 274);
             this.buttonAccessInstance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAccessInstance.Name = "buttonAccessInstance";
             this.buttonAccessInstance.Size = new System.Drawing.Size(132, 30);
             this.buttonAccessInstance.TabIndex = 7;
             this.buttonAccessInstance.Text = "Aceder à instacia";
             this.buttonAccessInstance.UseVisualStyleBackColor = true;
-            this.buttonAccessInstance.Click += new System.EventHandler(this.buttonAccessInstance_Click);
             // 
             // buttonRemoveInstance
             // 
-            this.buttonRemoveInstance.Location = new System.Drawing.Point(418, 251);
+            this.buttonRemoveInstance.Location = new System.Drawing.Point(418, 333);
             this.buttonRemoveInstance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRemoveInstance.Name = "buttonRemoveInstance";
             this.buttonRemoveInstance.Size = new System.Drawing.Size(132, 30);
@@ -184,7 +181,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(418, 180);
+            this.buttonEdit.Location = new System.Drawing.Point(418, 211);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(132, 33);
@@ -196,7 +193,7 @@
             // buttonDNS
             // 
             this.buttonDNS.Location = new System.Drawing.Point(464, 416);
-            this.buttonDNS.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDNS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDNS.Name = "buttonDNS";
             this.buttonDNS.Size = new System.Drawing.Size(125, 34);
             this.buttonDNS.TabIndex = 14;
@@ -212,35 +209,12 @@
             this.buttonLogout.TabIndex = 15;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(418, 286);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(132, 31);
-            this.buttonStart.TabIndex = 16;
-            this.buttonStart.Text = "Ligar Vm";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // buttonStop
-            // 
-            this.buttonStop.Location = new System.Drawing.Point(418, 323);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(132, 28);
-            this.buttonStop.TabIndex = 17;
-            this.buttonStop.Text = "Desligar VM";
-            this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // FormProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 510);
-            this.Controls.Add(this.buttonStop);
-            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonDNS);
             this.Controls.Add(this.buttonEdit);
@@ -284,7 +258,5 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDNS;
         private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Button buttonStop;
     }
 }
