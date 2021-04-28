@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -88,7 +89,20 @@ namespace LTIOpenstackProject
                 }
 
             }
-            openstack.createInstance(serverIP,scopeToken,name,imageid,volumeid,flavorid,networkid,count);
+            var code =openstack.createInstance(serverIP,scopeToken,name,imageid,volumeid,flavorid,networkid,count);
+            HttpStatusCode statusCode = code.StatusCode;
+            int numericStatusCode = (int)statusCode;
+            //Console.WriteLine(numericStatusCode);
+            if (numericStatusCode != 202)
+            {
+                MessageBox.Show(code.StatusCode.ToString());
+                return;
+            }
+            else
+            {
+                MessageBox.Show(code.StatusCode.ToString());
+                this.Close();
+            }
 
         }
 
@@ -147,7 +161,17 @@ namespace LTIOpenstackProject
                 {
                     XmlWriter template = XmlWriter.Create("templates/" + textBoxTemplateName.Text + ".xml");
                     template.WriteStartElement("Template");
-                    template.WriteElementString("Image", comboBoxImages.Text);
+                    if (radioButtonISO.Checked==true)
+                    {
+                        template.WriteElementString("ISO", "true");
+                        template.WriteElementString("Image", comboBoxImages.Text);
+                    }
+                    else
+                    {
+                        template.WriteElementString("Vol", "true");
+                        template.WriteElementString("Volume", comboBoxVolume.Text);
+                    }
+                    
                     template.WriteElementString("Flavor", comboBoxFlavor.Text);
                     template.WriteElementString("Network", comboBoxNetwork.Text);
                     template.WriteEndElement();
@@ -164,7 +188,16 @@ namespace LTIOpenstackProject
             {
                 XmlWriter template = XmlWriter.Create("templates/" + textBoxTemplateName.Text + ".xml");
                 template.WriteStartElement("Template");
-                template.WriteElementString("Image", comboBoxImages.Text);
+                if (radioButtonISO.Checked == true)
+                {
+                    template.WriteElementString("ISO", "true");
+                    template.WriteElementString("Image", comboBoxImages.Text);
+                }
+                else
+                {
+                    template.WriteElementString("Vol", "true");
+                    template.WriteElementString("Volume", comboBoxVolume.Text);
+                }
                 template.WriteElementString("Flavor", comboBoxFlavor.Text);
                 template.WriteElementString("Network", comboBoxNetwork.Text);
                 template.WriteEndElement();
@@ -193,22 +226,47 @@ namespace LTIOpenstackProject
             XmlDocument templateDoc = new XmlDocument();
             templateDoc.Load(fileName);
 
+            XmlElement inputImageStatus = (XmlElement)templateDoc.SelectSingleNode("/Template/ISO");
             XmlElement inputImage = (XmlElement)templateDoc.SelectSingleNode("/Template/Image");
+            XmlElement inputVolumeStatus = (XmlElement)templateDoc.SelectSingleNode("/Template/Vol");
+            XmlElement inputVolume = (XmlElement)templateDoc.SelectSingleNode("/Template/Volume");
             XmlElement inputFlavor = (XmlElement)templateDoc.SelectSingleNode("/Template/Flavor");
             XmlElement inputNetwork = (XmlElement)templateDoc.SelectSingleNode("/Template/Network");
 
-            if(inputImage != null)
+            if (inputImageStatus!=null)
             {
-                comboBoxImages.SelectedIndex = comboBoxImages.FindStringExact(inputImage.InnerText);
+                radioButtonISO.Checked = true;
+                if (inputImage != null)
+                {
+                    comboBoxImages.SelectedIndex = comboBoxImages.FindStringExact(inputImage.InnerText);
+                }
+                if (inputFlavor != null)
+                {
+                    comboBoxFlavor.SelectedIndex = comboBoxFlavor.FindStringExact(inputFlavor.InnerText);
+                }
+                if (inputNetwork != null)
+                {
+                    comboBoxNetwork.SelectedIndex = comboBoxNetwork.FindStringExact(inputNetwork.InnerText);
+                }
+
             }
-            if (inputFlavor != null)
+            if (inputVolumeStatus!=null)
             {
-                comboBoxFlavor.SelectedIndex = comboBoxFlavor.FindStringExact(inputFlavor.InnerText);
+                radioButtonVolume.Checked = true;
+                if (inputVolume != null)
+                {
+                    comboBoxVolume.SelectedIndex = comboBoxVolume.FindStringExact(inputVolume.InnerText);
+                }
+                if (inputFlavor != null)
+                {
+                    comboBoxFlavor.SelectedIndex = comboBoxFlavor.FindStringExact(inputFlavor.InnerText);
+                }
+                if (inputNetwork != null)
+                {
+                    comboBoxNetwork.SelectedIndex = comboBoxNetwork.FindStringExact(inputNetwork.InnerText);
+                }
             }
-            if (inputNetwork != null)
-            {
-                comboBoxNetwork.SelectedIndex = comboBoxNetwork.FindStringExact(inputNetwork.InnerText);
-            }
+   
         }
 
         private void radioButtonVolume_CheckedChanged(object sender, EventArgs e)
