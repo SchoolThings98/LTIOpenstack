@@ -98,3 +98,5 @@ C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormCreateZone.resources
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormDNS.resources
 D:\Users\Filipe\Desktop\School\Licenciatura\LTI\Project\LTIOpenstackProject\obj\Debug\LTIOpenstackProject.FormEditInstance.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormEditInstance.resources
+C:\Users\Victor Boarato\2SEMESTRE\LTI\LTIOpenstack\obj\Debug\LTIOpenstackProject.FormEditZone.resources

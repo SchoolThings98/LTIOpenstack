@@ -90,6 +90,7 @@
             this.btnUpdateZone.TabIndex = 5;
             this.btnUpdateZone.Text = "Editar Zona";
             this.btnUpdateZone.UseVisualStyleBackColor = true;
+            this.btnUpdateZone.Click += new System.EventHandler(this.btnUpdateZone_Click);
             // 
             // btnDeleteZone
             // 
@@ -99,6 +100,7 @@
             this.btnDeleteZone.TabIndex = 6;
             this.btnDeleteZone.Text = "Apagar Zona";
             this.btnDeleteZone.UseVisualStyleBackColor = true;
+            this.btnDeleteZone.Click += new System.EventHandler(this.btnDeleteZone_Click);
             // 
             // FormDNS
             // 
