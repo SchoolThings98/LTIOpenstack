@@ -128,6 +128,7 @@
             this.buttonAccessInstance.TabIndex = 7;
             this.buttonAccessInstance.Text = "Aceder à instacia";
             this.buttonAccessInstance.UseVisualStyleBackColor = true;
+            this.buttonAccessInstance.Click += new System.EventHandler(this.buttonAccessInstance_Click);
             // 
             // buttonRemoveInstance
             // 

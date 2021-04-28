@@ -293,5 +293,28 @@ namespace LTIOpenstackProject
                 return;
             }
         }
+
+        private void buttonAccessInstance_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione uma instancia para aceder");
+                return;
+            }
+            var instanceName = listBox1.SelectedItem.ToString();
+            var instanceID = "";
+            foreach (JToken instance in instancesList)
+            {
+                if ((string)instance.SelectToken("name") == instanceName)
+                {
+                    instanceID = (string)instance.SelectToken("id");
+                    break;
+                }
+
+            }
+            OpenstackAPI openstack = new OpenstackAPI();
+            var response = openstack.accessInstance(serverIP, scopeToken, instanceID);
+            System.Diagnostics.Process.Start(response);
+        }
     }
 }
